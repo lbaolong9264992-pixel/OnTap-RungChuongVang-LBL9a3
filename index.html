@@ -775,17 +775,17 @@
       <h2>Sẵn sàng ôn tập trước kỳ thi?</h2>
       <p class="muted">
         Mỗi câu hỏi có <strong>4 đáp án</strong> (chỉ 1 đáp án đúng) và giới hạn <strong>12 giây</strong>.
-        Sau khi hoàn thành 60 câu chính, bạn sẽ bước vào <strong>5 câu hỏi phụ (Boss Cuối)</strong> với không gian tối sấm sét — chọn sai 1 lần sẽ chuyển ngay sang câu tiếp theo và không được chọn lại.
+        Sau khi hoàn thành 60 câu chính
       </p>
 
       <div class="hero-grid">
         <div class="info-box">
           <strong>60 Câu Chính</strong>
-          <span>Khởi động (20), Tăng tốc (20), Về đích (20) — lặp 2 lần</span>
+          <span>Khởi động (20 câu), Tăng tốc (20 câu), Về đích (20 câu)</span>
         </div>
         <div class="info-box">
-          <strong>⚡ 5 Câu Boss Cuối</strong>
-          <span>Xáo trộn ngẫu nhiên • Sai 1 lần sang câu tiếp</span>
+          <strong>⚡ 5 Câu Cuối</strong>
+          <span> 5 câu hỏi quyết định của bài</span>
         </div>
         <div class="info-box">
           <strong>12 Giây / Câu</strong>
@@ -1375,10 +1375,10 @@ function handleOptionClick(btn, isCorrect, isBoss) {
       questionLocked = true;
       disableAllOptions();
       revealCorrectOption();
-      showFeedback("wrong", "Sai rồi! Ở chặng Boss Cuối, chọn sai 1 lần sẽ chuyển ngay sang câu tiếp theo.");
+      showFeedback("wrong", "Sai rồi! Ở chặng Cuối, chọn sai 1 lần sẽ chuyển ngay sang câu tiếp theo.");
       advanceToNext(1100);
     } else {
-      showFeedback("wrong", "Đáp án chưa đúng (hóa đỏ). Hãy chọn lại trước khi hết 12 giây!");
+      showFeedback("wrong", "Đáp án chưa đúng . Hãy chọn lại trước khi hết 12 giây!");
     }
   }
 }
@@ -1401,9 +1401,9 @@ function buildFinalComment() {
 
   let tierText = "";
   if (accuracy >= 85 && bossScore >= 4) {
-    tierText = `Xuất sắc! Bạn đạt ${firstTryCorrectCount}/65 câu đúng ngay lần đầu (${accuracy.toFixed(1)}%) và vượt qua ${bossScore}/5 câu Boss Cuối. Nền tảng kiến thức Dân số & SKSS THCS của bạn rất vững vàng, sẵn sàng bứt phá trong phòng thi!`;
+    tierText = `Xuất sắc! Bạn đạt ${firstTryCorrectCount}/65 câu đúng ngay lần đầu (${accuracy.toFixed(1)}%) và vượt qua ${bossScore}/5 câu Cuối. Nền tảng kiến thức Dân số & SKSS THCS của bạn rất vững vàng, sẵn sàng bứt phá trong phòng thi!`;
   } else if (accuracy >= 65) {
-    tierText = `Khá tốt! Bạn đạt ${firstTryCorrectCount}/65 câu đúng ngay lần đầu (${accuracy.toFixed(1)}%) và có ${bossScore}/5 câu đúng ở chặng Boss Cuối. Hãy ôn lại các mốc ngày lễ dân số, quy định pháp luật và các dấu hiệu dậy thì để hạn chế chọn sai khi bấm nhanh.`;
+    tierText = `Khá tốt! Bạn đạt ${firstTryCorrectCount}/65 câu đúng ngay lần đầu (${accuracy.toFixed(1)}%) và có ${bossScore}/5 câu đúng ở chặng Cuối. Hãy ôn lại các mốc ngày lễ dân số, quy định pháp luật và các dấu hiệu dậy thì để hạn chế chọn sai khi bấm nhanh.`;
   } else {
     tierText = `Cần cố gắng thêm! Bạn đạt ${firstTryCorrectCount}/65 câu đúng ngay lần đầu (${accuracy.toFixed(1)}%) với ${wrongAttemptsCount} lần chọn sai và ${skippedCount} câu bỏ qua. Hãy làm lại thêm 1–2 lượt để phản xạ nhanh hơn trong mốc 12 giây và làm quen áp lực 5 câu Boss Cuối.`;
   }
