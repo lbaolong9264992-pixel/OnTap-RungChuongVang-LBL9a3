@@ -3,7 +3,7 @@
 <head><script src="webshield.js"></script>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Rung Chuông Vàng — Dân số &amp; SKSS THCS (Trắc nghiệm, Tự luận &amp; Trả lời ngắn AKI)</title>
+<title>Rung Chuông Vàng — Dân số &amp; SKSS THCS (Trắc nghiệm, Tự luận &amp; Trả lời ngắn)</title>
 <style>
   :root {
     --bg: #f4f7fb;
@@ -1061,7 +1061,7 @@
           <label class="mode-option" id="mode-card-short">
             <input type="radio" name="quiz-mode" value="short" />
             <div>
-              <strong>Thi trả lời ngắn (15 câu ngẫu nhiên — File AKI)</strong>
+              <strong>Thi trả lời ngắn (15 câu ngẫu nhiên)</strong>
               <div class="muted">Chọn ngẫu nhiên 15 câu điền vào chỗ trống • Lưu vào Bảng xếp hạng Tự luận (không viết hoa)</div>
             </div>
           </label>
@@ -2345,7 +2345,7 @@ function handleOptionClick(btn, isCorrect, isBoss) {
   }
 }
 
-// Chấm điểm câu trả lời ngắn (điền vào chỗ trống - file AKI): bắt buộc tất cả ký tự không viết hoa
+// Chấm điểm câu trả lời ngắn (điền vào chỗ trống ): bắt buộc tất cả ký tự không viết hoa
 function hasUppercaseLetter(str) {
   return str !== str.toLowerCase();
 }
@@ -2630,7 +2630,7 @@ function showSummary() {
   quizScreen.style.display = "none";
   resultScreen.style.display = "block";
 
-  document.getElementById("res-mode-label").textContent = sessionMode === "short" ? "Trả lời ngắn (15 câu ngẫu nhiên) — File AKI" : "Trắc nghiệm";
+  document.getElementById("res-mode-label").textContent = sessionMode === "short" ? "Trả lời ngắn (15 câu ngẫu nhiên)" : "Trắc nghiệm";
   document.getElementById("res-correct").textContent = String(firstTryCorrectCount);
   document.getElementById("res-wrong").textContent = String(wrongAttemptsCount);
   document.getElementById("res-skipped").textContent = String(skippedCount);
